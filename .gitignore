@@ -1,7 +1,7 @@
 node_modules/
-e2e/
-karma.conf/
-package-lock.json
+#e2e/
+#karma.conf/
+#package-lock.json
 tslint.json
-protractor.conf.js
-tsconfig.json
+#protractor.conf.js
+#tsconfig.json
