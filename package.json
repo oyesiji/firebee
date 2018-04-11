@@ -24,8 +24,8 @@
     "core-js": "^2.4.1",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19",
-    "jquery": "3.3.1",
-    "bootstrap": "4.1.0"
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "@angular/cli": "1.6.5",
@@ -46,6 +46,8 @@
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.5.3"
+    "typescript": "~2.5.3",
+     "bootstrap": "^3.3.7",
+    "jquery": "^3.3.1"
   }
 }
