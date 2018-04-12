@@ -11,6 +11,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LoginComponent } from './auth/login/login.component';
+import { RouteGuard } from './auth/route-guard';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 
@@ -32,7 +33,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RouteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
