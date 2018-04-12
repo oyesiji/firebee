@@ -22,7 +22,7 @@ export class SignUpComponent implements OnInit {
      userData => {
        userData.sendEmailVerification();
        const message = 'A verification email has been sent to ${email}.';
-       this.notifier.display('success',message);
+       this.notifier.display('success', message);
        return firebase.database().ref().set({
          email: email,
          uid: userData.uid,
