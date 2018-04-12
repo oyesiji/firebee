@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Form } from '@angular/forms';
-
+import { Form, NgForm } from '@angular/forms';
+import * as firebase from 'firebase';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -12,9 +12,32 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
   }
-   onSubmit(form:Form){
+   onSubmit(form: NgForm) {
+     const fullname = form.value.fullname;
+     const email = form.value.email;
+     const password = form.value.password;
+     console.log(fullname , email, password);
+     firebase.auth().createUserWithEmailAndPassword(email, password).then(
+     userData => {
+       userData.sendEmailVerification();
+       return firebase.database().ref().set({
+         email: email,
+         uid: userData.uid,
+         registrationDate: new Date().toString(),
+         name: fullname
+       }).then( () => {
+         firebase.auth().signOut();
+       });
+
+
+     }).catch( err => {
+     console.log(err);
+     }
+
+     );
+   }
 
   }
 
 
-}
+
